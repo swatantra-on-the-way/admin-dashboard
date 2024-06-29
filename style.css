@@ -11,16 +11,17 @@ html, body{
 /*      Main Layout Structure       */
 
 .layout{
+    width: 100%;
+    min-width: min-content;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    background-color: palegoldenrod;
+    gap: 8px;
 }
 
 .layout > *{
-    border: 1px solid red;
-    background-color: palegoldenrod;
-
+    border: 2px solid red;
 }
-
 
 /* ******************************************************** */
 /* ***************** Sidebar Styling rules **************** */
@@ -29,9 +30,11 @@ html, body{
 /* Main container */
 .sidebar{
     grid-row: 1 / 3;
-    background-color: #0ea5e9;
+    grid-column: 1 / 2 ;
+    background-color: hsl(199, 89%, 48%);
     color: rgb(255, 255, 255);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
     padding: 10px 50px 0 10px;
 }
@@ -49,9 +52,16 @@ html, body{
     align-items: center;
 }
 
+.sidebar > .dashboard > .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .sidebar .navigation-1 .logo img, .sidebar .navigation-2 .logo img{
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
 }
 
 /*   Content inside sidebar    */
@@ -60,11 +70,9 @@ html, body{
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    /* border: 2px solid green; */
 }
 
-/*      Dashboard Container   */ 
-
+/*   Dashboard Container   */ 
 .dashboard{
     font-size: 1.2rem;
 }
@@ -72,15 +80,127 @@ html, body{
     font-size: 1rem;
 }
 
-
-/*      Styling dashboard and children of vertical nav bars   */
+/*   Styling dashboard and children of vertical nav bars   */
 .dashboard, .navigation-1 > *, .navigation-2 > *{
     display: flex;
-    gap: 8px;
+    gap: 15px;
 }
-
 
 /* ******************************************************** */
 /* ***************** Header Styling rules ****************  */
 /* ******************************************************** */
 
+.header{
+    background: #ffffff;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 2fr 1fr;
+    padding: 10px 40px 10px 40px;
+
+}
+
+.header p{
+    text-wrap: nowrap;
+    font-weight: 500;
+}
+
+.header .profile-name{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.header .text-2{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.header .text-2 span{
+    font-weight: 500;
+}
+
+.header > *{
+    display: flex;
+    align-items: center;
+}
+
+
+.header > div:nth-child(odd){
+    gap: 10px;
+}
+
+.header .input-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    width: 90%;
+}
+
+.header > .search-bar  input{
+    height: 22px;
+    width: 100%;
+    border-radius: 18px;
+    border: none;
+    background: rgba(220, 220, 220, 0.6);
+}
+
+.header .logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .logo img{
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+}
+
+.header .account-info .profile-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header .account-info, .header .header-buttons{
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .logo, .header .profile-image{
+    flex-shrink: 0;
+}
+
+.header .profile-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header .account .profile-image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-buttons > *{
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 10px 8px 10px;
+    background-color: hsl(199, 89%, 48%);
+    color: #ffffff;
+}
+
+
+
+
+/* ******************************************************** */
+/* ***************** Main-content Styling rules ****************  */
+/* ******************************************************** */
